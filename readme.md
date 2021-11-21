@@ -1,6 +1,11 @@
 # Angular Toy Project
 
-> angular toy project version 13.0.3.
+> angular toy project version 13
+
+## 문서
+
+- [angular.kr](https://angular.kr)
+- [angular.io](https://angular.io/)
 
 ## Development server
 
