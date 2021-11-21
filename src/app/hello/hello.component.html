@@ -1,0 +1,20 @@
+<!-- * 문자열 바인딩 -->
+<h1>{{ message }}</h1>
+
+<!-- * 프로퍼티 바인딩 -->
+<p [id]="helloId" [style.color]="helloColor">this is property binding</p>
+
+<!-- * 이벤트 바인딩 -->
+<button (click)="handleClick()" [disabled]="canClick">event binding</button>
+
+<!-- * 디렉티브 : Directives, 템플릿에 추가 기능을 구현 -->
+<!-- 디렉티브를 활용하면 DOM 구조를 동적으로 변경할 수 있다. -->
+<!-- ngIf : 표현식이 true면 해당 템플릿을 제공하고 false이면 else절에 해당하는 템플릿을 제공한다. -->
+<div *ngIf="canEdit; else noEdit">
+  <p>You can edit the following paragraph.</p>
+</div>
+<ng-template #noEdit>
+  <p>The following paragraph is read only. Try clicking the button!</p>
+</ng-template>
+<button (click)="handleEditClick()">handleEditClick</button>
+<p [contentEditable]="canEdit">{{ message }}</p>
