@@ -6,19 +6,40 @@ import { Component, Input, OnInit, SimpleChanges } from '@angular/core';
   styleUrls: ['./time-display.component.css'],
 })
 export class TimeDisplayComponent implements OnInit {
-  constructor() {
-    setInterval(() => {
-      this.test++;
-    }, 1000);
-  }
-
-  @Input() inputData: number = 0;
-
+  constructor() {}
   ngOnInit(): void {}
 
-  ngOnChanges(changes: SimpleChanges): void {
-    console.log(changes);
+  @Input() modeAsInputData: string = 'stop';
+
+  min: number = 0;
+  sec: number = 0;
+  ms: number = 0;
+
+  timeInterval = setInterval(() => {}, 0);
+
+  timeStart() {
+    this.timeInterval = setInterval(() => {
+      this.ms++;
+    }, 10);
   }
 
-  test = 1;
+  timeStop() {
+    clearInterval(this.timeInterval);
+  }
+
+  timeReset() {
+    this.timeStop();
+    this.ms = 0;
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    for (const propName in changes) {
+      if (propName === 'modeAsInputData') {
+        const currentMode: string = changes[propName].currentValue;
+        if (currentMode === 'start') this.timeStart();
+        else if (currentMode === 'stop') this.timeStop();
+        else if (currentMode === 'reset') this.timeReset();
+      }
+    }
+  }
 }

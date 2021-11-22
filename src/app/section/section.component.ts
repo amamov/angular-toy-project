@@ -10,11 +10,10 @@ export class SectionComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  currentNumber: number = 0;
+  mode: string = 'stop';
+  commandText: string = '';
 
-  startTime(number: number) {
-    console.log('데이터 전달 완료');
-    console.log(number);
-    this.currentNumber = number;
+  startTime(mode: string) {
+    this.mode = mode;
   }
 }
