@@ -10,6 +10,8 @@ import { LoggerService } from '../logger.service';
 export class HelloComponent implements OnInit {
   // 컴포넌트의 동작을 정의하는 코드가 들어간다.
 
+  constructor(private readonly logger: LoggerService) {}
+
   title = 'angular-toy-project';
   message = 'Hello angular!!';
   helloId = 'this-is-id';
@@ -30,8 +32,6 @@ export class HelloComponent implements OnInit {
       this.message = "I'm read only!";
     }
   }
-
-  constructor(private readonly logger: LoggerService) {}
 
   count = 0;
 
