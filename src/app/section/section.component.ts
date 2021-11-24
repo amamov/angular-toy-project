@@ -9,11 +9,4 @@ export class SectionComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
-
-  mode: string = 'stop';
-  commandText: string = '';
-
-  startTime(mode: string) {
-    this.mode = mode;
-  }
 }
