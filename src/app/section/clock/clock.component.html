@@ -1,0 +1,11 @@
+<p>
+  {{ currentTime }}
+
+  <a [routerLink]="['/stopwatch']" routerLinkActive="router-link-active"
+    >stopwatch으로 이동</a
+  >
+
+  {{ routingCount }}
+
+  <button (click)="goStopwatch()">stopwatch으로 이동</button>
+</p>

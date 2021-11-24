@@ -4,4 +4,11 @@
 
   {{ commandText }}
   <app-buttons (clickEvent)="commandText = $event"></app-buttons>
+
+  <!-- import RouterModule -->
+  <a [routerLink]="['/clock']" routerLinkActive="router-link-active"
+    >clock으로 이동</a
+  >
+  {{ routingCount }}
+  <button (click)="goClock()">clock으로 이동</button>
 </div>

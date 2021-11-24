@@ -10,7 +10,7 @@ import { SectionModule } from './section/section.module';
 @NgModule({
   declarations: [AppComponent, HelloComponent, WriterComponent],
   imports: [BrowserModule, AppRoutingModule, LayoutModule, SectionModule],
-  providers: [],
+  providers: [AppRoutingModule],
   bootstrap: [AppComponent], // 처음 실행할 컴포넌트 지정
 })
 export class AppModule {}
