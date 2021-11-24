@@ -1,5 +1,7 @@
 <div class="container_display">
-  <app-time-display [modeAsInputData]="mode"></app-time-display>
+  <app-time-display [modeAsInputData]="mode">
+    <h1>hello</h1>
+  </app-time-display>
   <app-buttons (clickEvent)="startTime($event)"></app-buttons>
 
   {{ commandText }}
